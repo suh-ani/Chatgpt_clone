@@ -1,6 +1,6 @@
 langchain-community
 langchain-huggingface
 torch
-chainlit
+chainlit>=1.0.0
 requests
 transformers
