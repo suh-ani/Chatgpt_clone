@@ -11,7 +11,8 @@ def load_vector_store():
     documents = loader.load()
     splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     docs = splitter.split_documents(documents)
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2",model_kwargs={'device': device})
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-MiniLM-L6-v2"
+,model_kwargs={'device': device})
     db = FAISS.from_documents(docs, embeddings)
     return db
 
